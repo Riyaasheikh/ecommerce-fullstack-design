@@ -1,0 +1,31 @@
+body {
+  background-color: #DEE2E7; 
+  margin: 0;
+  padding: 0;
+}
+
+.custom-card-bg {
+  background-color: #FFFFFF; 
+  border: 1px solid #E3E8EE; 
+  border-radius: 6px;
+  overflow: hidden; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (min-width: 992px) {
+  .no-scrollbar {
+    overflow: visible !important;
+    flex-wrap: wrap;
+  }
+  .no-scrollbar > div {
+    width: 20% !important;
+    flex: 0 0 20% !important;
+  }
+}
