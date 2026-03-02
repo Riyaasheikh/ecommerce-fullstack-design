@@ -10,15 +10,9 @@ const Related = () => {
 
     return (
         <SectionWrapper>
-            {/* Title changes to match your request */}
             <h4 className='fw-bold mb-4'>You may also like</h4>
             
             <div className='bg-white border rounded shadow-sm p-3'>
-                {/* d-flex flex-row: forces horizontal layout for mobile
-                  overflow-auto: enables horizontal scroll
-                  d-md-grid: reverts to standard grid for tablet/desktop
-                  g-3: maintains gutter spacing
-                */}
                 <div 
                     className='d-flex flex-row flex-nowrap overflow-auto d-md-grid g-3 no-scrollbar'
                     style={{ 
@@ -30,7 +24,7 @@ const Related = () => {
                         <div 
                             key={index} 
                             className="flex-shrink-0" 
-                            style={{ width: '160px' }} // Fixed width for horizontal scroll on mobile
+                            style={{ width: '160px' }}
                         >
                             <Card className="h-100 border-0 shadow-none">
                                 <Link to={`/product/${prod.id}`}>
@@ -76,8 +70,6 @@ const Related = () => {
                     ))}
                 </div>
             </div>
-
-            {/* Optional CSS to hide scrollbar while keeping functionality */}
             <style jsx>{`
                 .no-scrollbar::-webkit-scrollbar {
                     display: none;

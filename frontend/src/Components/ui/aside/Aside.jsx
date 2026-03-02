@@ -22,7 +22,6 @@ const Aside = () => {
                             </div>
                         </Col>
 
-                        {/* Text Column: Takes remaining space */}
                         <Col xs={8} className="ps-3">
                             <h6 className="mb-1 text-truncate-2" style={{ fontSize: '0.9rem', lineHeight: '1.2' }}>
                                 {item.title}

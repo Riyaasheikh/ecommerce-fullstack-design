@@ -6,8 +6,6 @@ const TopToolbar = ({ viewMode, setViewMode, totalItems }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const params = new URLSearchParams(location.search);
-
-    // Get current values from URL to keep UI in sync
     const currentSort = params.get('sort') || 'featured';
     const isVerified = params.get('verified') === 'true';
 
@@ -27,7 +25,6 @@ const TopToolbar = ({ viewMode, setViewMode, totalItems }) => {
             </div>
             
             <div className="d-flex flex-wrap justify-content-center gap-3 align-items-center">
-                {/* Verified Toggle */}
                 <div className="form-check mb-0">
                     <input 
                         className="form-check-input" 
@@ -39,7 +36,6 @@ const TopToolbar = ({ viewMode, setViewMode, totalItems }) => {
                     <label className="form-check-label" htmlFor="verified">Verified only</label>
                 </div>
 
-                {/* Sort Dropdown */}
                 <select 
                     className="form-select form-select-sm" 
                     style={{ width: 'auto' }}
@@ -52,7 +48,6 @@ const TopToolbar = ({ viewMode, setViewMode, totalItems }) => {
                     <option value="newest">Newest</option>
                 </select>
 
-                {/* Layout Toggle Buttons */}
                 <div className="btn-group">
                     <button 
                         className={`btn btn-outline-secondary btn-sm ${viewMode === 'grid' ? 'active' : ''}`}

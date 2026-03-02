@@ -22,7 +22,6 @@ const Time = () => {
     }, []);
 
     return (
-        /* Removed mt-4 and used bg-light for a professional look */
         <div className="d-flex gap-1 justify-content-center justify-content-lg-start">
             {[
                 { label: 'Days', val: timeLeft.days, hideMobile: true },

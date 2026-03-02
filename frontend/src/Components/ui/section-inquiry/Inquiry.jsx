@@ -19,23 +19,19 @@ const Inquiry = () => {
     <SectionWrapper className="my-4">
       <div style={heroStyle} className="shadow-sm">
         <Row className="w-100 align-items-center">
-          {/* CONTENT */}
           <Col xs={12} lg={7} className="text-white">
             <h4 className="fw-bold mb-3" style={{ maxWidth: '300px' }}>
               An easy way to send requests to all suppliers
             </h4>
-            {/* Desktop only text */}
             <p className="d-none d-lg-block" style={{ maxWidth: '400px', opacity: 0.9 }}>
               Streamline your procurement process. Fill out the form and receive 
               quotes from verified suppliers within 24 hours.
             </p>
-            {/* Mobile only button (Matches Image 2) */}
             <Button variant="primary" className="d-lg-none mt-2 px-4 shadow-sm fw-bold">
                Send inquiry
             </Button>
           </Col>
 
-          {/* FORM (Hidden on Mobile) */}
           <Col lg={5} className="d-none d-lg-block">
             <Card className="p-3 border-0 shadow-sm rounded-3">
               <Card.Body>

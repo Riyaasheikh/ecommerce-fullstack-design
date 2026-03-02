@@ -8,27 +8,39 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [loading, setLoading] = useState(true);
 
+    // PERSISTENCE & RECOVERY: Validates the token on mount
     useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) setUser(JSON.parse(storedUser));
-        
-        if (token) {
-            axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-            axios.get("/api/user")
-                .then(res => {
+        const verifyUser = async () => {
+            const storedToken = localStorage.getItem("token");
+            const storedUser = localStorage.getItem("user");
+
+            if (storedToken) {
+                // Set header immediately for the verification call
+                axios.defaults.headers.common["Authorization"] = `Bearer ${storedToken}`;
+                
+                // Pre-fill user from local storage to prevent instant redirects
+                if (storedUser) {
+                    setUser(JSON.parse(storedUser));
+                }
+
+                try {
+                    const res = await axios.get("/api/user");
                     setUser(res.data);
                     localStorage.setItem("user", JSON.stringify(res.data));
-                })
-                .catch(() => logout()) 
-                .finally(() => setLoading(false));
-        } else {
-            setLoading(false);
-        }
-    }, [token]);
+                } catch (error) {
+                    console.error("Token verification failed:", error);
+                    logout(); // Clear storage if token is invalid or expired
+                }
+            }
+            setLoading(false); // Stop loading only after verification attempt
+        };
+
+        verifyUser();
+    }, []);
 
     const login = (newToken, userData) => {
         localStorage.setItem('token', newToken);
-        localStorage.setItem('user', JSON.stringify(userData)); // Save user for instant recovery
+        localStorage.setItem('user', JSON.stringify(userData));
         setToken(newToken);
         setUser(userData);
         axios.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;

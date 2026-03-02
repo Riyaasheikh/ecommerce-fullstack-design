@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import SectionWrapper from '../../global/SectionWrapper';
 
-// Import images at the top (Vite loves this for optimization)
+
 import img1 from '../../../assets/flag/CN@2x.png';
 import img2 from '../../../assets/flag/FR@2x.png';
 import img3 from '../../../assets/flag/GB@2x.png';
@@ -17,7 +17,6 @@ const SUPPLIER_DATA = [
   { id: 4, img: img4, url: 'shopname.ae', title:'Russia' },
   { id: 5, img: img5, url: 'shopname.ae', title:'Russia' },
   { id: 6, img: img6, url: 'shopname.ae', title:'Russia' },
-  // Reuse images for the rest to keep it clean
   { id: 7, img: img1, url: 'shopname.ae', title:'Russia' },
   { id: 8, img: img1, url: 'shopname.ae', title:'Russia' },
   { id: 9, img: img1, url: 'shopname.ae', title:'Russia' },
@@ -45,7 +44,7 @@ const Supplier = () => {
                 <img
                   src={item.img}
                   alt="flag"
-                  className="img-fluid " // Bootstrap class for responsive images
+                  className="img-fluid " 
                   style={{
                     maxWidth: '100%',
                     maxHeight: '100%',

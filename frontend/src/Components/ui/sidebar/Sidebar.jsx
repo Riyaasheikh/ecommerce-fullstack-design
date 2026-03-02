@@ -96,7 +96,6 @@ const Sidebar = ({ filters, setFilters, applyFilters, className }) => {
 
   return (
     <>
-      {/* Mobile Button */}
       <Button
         variant="light"
         className="d-lg-none mb-3 border"
@@ -105,12 +104,10 @@ const Sidebar = ({ filters, setFilters, applyFilters, className }) => {
         <RiFilterLine /> Filters
       </Button>
 
-      {/* Desktop Sidebar */}
       <div className={`d-none d-lg-block ${className}`}>
         <Content />
       </div>
 
-      {/* Mobile Offcanvas */}
       <Offcanvas
         show={showMobile}
         onHide={() => setShowMobile(false)}

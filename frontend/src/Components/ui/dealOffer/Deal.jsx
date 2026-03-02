@@ -9,7 +9,6 @@ const Deal = () => {
     <SectionWrapper>
       <Card className="mb-3 border-0 shadow-sm overflow-hidden">
         <Row className="mx-0">
-          {/* HEADER SECTION */}
           <Col lg={3} xs={12} className="border-bottom border-lg-end border-lg-bottom-0 px-3 px-lg-4 py-3 bg-white">
             <div className="d-flex d-lg-block justify-content-between align-items-center">
               <div className="text-start">
@@ -22,14 +21,12 @@ const Deal = () => {
             </div>
           </Col>
 
-          {/* SCROLLABLE PRODUCTS SECTION */}
           <Col lg={9} xs={12} className="p-0">
             <div className="d-flex overflow-auto no-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>
               {Sale.map((item, index) => (
                 <div 
                   key={index} 
                   className="border-end p-3 text-center flex-shrink-0"
-                  /* 140px width on mobile, 20% width (5 items) on large screens */
                   style={{ width: '140px', flex: '0 0 auto' }} 
                 >
                   <div className="d-flex align-items-center justify-content-center mb-2" style={{ height: '100px' }}>

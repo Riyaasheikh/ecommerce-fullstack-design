@@ -2,8 +2,6 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { RiInboxLine, RiSearchLine, RiSendPlane2Fill, RiShieldFill } from '@remixicon/react';
 import SectionWrapper from '../../global/SectionWrapper';
-
-// Mock imports
 import img1 from '../../../assets/img/services/image 108.png';
 import img2 from '../../../assets/img/services/image 104.png';
 import img3 from '../../../assets/img/services/image 106.png';
@@ -52,12 +50,11 @@ const Services = () => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      filter: 'brightness(0.8)' // Makes the white icon pop more
+                      filter: 'brightness(0.8)'
                     }}
                   />
                 </div>
 
-                {/* Overlapping Icon Badge */}
                 <div 
                   className="position-absolute border border-2 border-white rounded-circle d-flex align-items-center justify-content-center text-white"
                   style={{ 

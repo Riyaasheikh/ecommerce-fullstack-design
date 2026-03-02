@@ -25,8 +25,7 @@ const Hero = () => {
                 backgroundImage: `url(${heroImg})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                /* Responsive height: 200px on mobile, 380px on desktop */
-                minHeight: window.innerWidth < 768 ? "200px" : "380px", 
+                minHeight: window.innerWidth < 768 ? "200px" : "370px", 
                 padding: window.innerWidth < 768 ? "20px" : "40px",
                 borderRadius: "4px"
               }}

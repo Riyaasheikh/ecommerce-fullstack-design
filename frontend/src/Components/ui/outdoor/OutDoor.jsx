@@ -25,20 +25,17 @@ const OutDoor = () => {
 
   return (
     <SectionWrapper>
-      {/* Container div with a single outer border */}
       <div className="overflow-hidden border rounded" style={{ backgroundColor: "#fff" }}>
-        {/* align-items-stretch makes Col lg={3} and Col lg={9} equal height */}
         <Row className="g-0 align-items-stretch">
           
-          {/* LEFT BANNER */}
           <Col lg={3} md={4} className="d-none d-md-block">
             <div
               style={{
                 backgroundImage: `url(${img1})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                height: "100%", // Fills the stretched Col
-                minHeight: "257px", // Your target height
+                height: "100%", 
+                minHeight: "257px", 
                 padding: "20px",
               }}
             >
@@ -51,7 +48,6 @@ const OutDoor = () => {
             </div>
           </Col>
 
-          {/* RIGHT PRODUCT GRID */}
           <Col lg={9} md={8}>
             <Row className="g-0">
               {items.map((item, index) => (
@@ -60,7 +56,7 @@ const OutDoor = () => {
                   md={3} 
                   key={index} 
                   className="border-start border-bottom"
-                  style={{ height: "128.5px" }} // Exactly half of 257px
+                  style={{ height: "128.5px" }} 
                 >
                   <Card className="h-100 border-0 rounded-0 flex-row p-2">
                     <Card.Body className="p-2 d-flex flex-column">
