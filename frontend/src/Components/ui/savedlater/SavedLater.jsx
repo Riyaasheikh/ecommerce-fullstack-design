@@ -4,7 +4,7 @@ import SectionWrapper from '../../global/SectionWrapper';
 import { ProductData } from '../../../data/Content';
 import { useCart } from '../../../context/CartContext'; 
 
-const SavedForLater = () => {
+const SavedLater = () => {
     const { addToCart, removeFromCart } = useCart(); 
     
     const SavedItems = ProductData.filter(item => item.id > 11 && item.id <= 15);
@@ -77,4 +77,4 @@ const SavedForLater = () => {
     );
 };
 
-export default SavedForLater;
+export default SavedLater;
